@@ -48,7 +48,7 @@ export const shared = defineConfig({
   },
 
   sitemap: {
-    hostname: 'https://vitepress.dev',
+    hostname: 'https://yaoqing.ai/docs',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('migration'))
     }
@@ -59,19 +59,23 @@ export const shared = defineConfig({
     // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vitepress-logo-mini.svg' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/yaoqing-logo-mini.svg' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/yaoqing-logo-mini.png' }],
-    ['meta', { name: 'theme-color', content: '#5f67ee' }],
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:locale', content: 'zh' }],
-    ['meta', { property: 'og:title', content: 'VitePress | Vite & Vue Powered Static Site Generator' }],
-    ['meta', { property: 'og:site_name', content: 'VitePress' }],
-    ['meta', { property: 'og:image', content: 'https://vitepress.dev/vitepress-og.jpg' }],
-    ['meta', { property: 'og:url', content: 'https://vitepress.dev/' }],
+    // ['meta', { name: 'theme-color', content: '#5f67ee' }],
+    // ['meta', { property: 'og:type', content: 'website' }],
+    // ['meta', { property: 'og:locale', content: 'zh' }],
+    // ['meta', { property: 'og:title', content: 'VitePress | Vite & Vue Powered Static Site Generator' }],
+    // ['meta', { property: 'og:site_name', content: 'VitePress' }],
+    // ['meta', { property: 'og:image', content: 'https://vitepress.dev/vitepress-og.jpg' }],
+    // ['meta', { property: 'og:url', content: 'https://vitepress.dev/' }],
     ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }]
   ],
 
   themeConfig: {
     // logo: { src: '/yaoqing-logo-mini.svg', width: 24, height: 24 },
     logo: { src: '/yaoqing-logo-mini.svg', width: 42 },
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/yaoqing-open/yaoqing-docs' }
+    ],
 
     // socialLinks: [
     //   { icon: '联系我们2', link: 'https://yaoqing.ai' }
