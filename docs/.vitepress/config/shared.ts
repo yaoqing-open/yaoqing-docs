@@ -57,8 +57,8 @@ export const shared = defineConfig({
   /* prettier-ignore */
   head: [
     // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vitepress-logo-mini.svg' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vitepress-logo-mini.png' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/vitepress-logo-mini.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/yaoqing-logo-mini.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/yaoqing-logo-mini.png' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'zh' }],
@@ -70,8 +70,8 @@ export const shared = defineConfig({
   ],
 
   themeConfig: {
-    // logo: { src: '/vitepress-logo-mini.svg', width: 24, height: 24 },
-    logo: { src: '/vitepress-logo-mini.png', width: 30, height: 24 },
+    // logo: { src: '/yaoqing-logo-mini.svg', width: 24, height: 24 },
+    logo: { src: '/yaoqing-logo-mini.svg', width: 42 },
 
     // socialLinks: [
     //   { icon: '联系我们2', link: 'https://yaoqing.ai' }
@@ -96,7 +96,7 @@ export const shared = defineConfig({
         customIcon: {
           vitepress: localIconLoader(
             import.meta.url,
-            '../../public/vitepress-logo-mini.svg'
+            '../../public/yaoqing-logo-mini.svg'
           ),
           firebase: 'logos:firebase'
         }
