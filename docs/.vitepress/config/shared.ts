@@ -86,7 +86,7 @@ export const shared = defineConfig({
       options: {
         appId: 'G9QCU5H8Q2',
         apiKey: '04a3000659a2dc09b956ecc943a38a2d',
-        indexName: 'movies_index',
+        indexName: 'yaoqing',
         locales: {
           ...zhSearch,
         }
