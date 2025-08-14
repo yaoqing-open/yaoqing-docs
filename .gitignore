@@ -1,0 +1,53 @@
+# yue-library ignore
+application-test-confidential.yml
+application-test-confidential-*.yml
+
+# IDE ignore
+rebel.xml
+
+# Eclipse and STS
+.project
+.classpath
+.settings/
+.sts4-cache/
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# Maven
+target/
+.factorypath
+.flattened-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+# vue
+.vscode
+cache/
+dist/
+node_modules/
