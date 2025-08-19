@@ -10,7 +10,7 @@ export const zh = defineConfig({
   description: '爻擎使用文档-中文文档',
 
   themeConfig: {
-    logoLink: { link: "/专业模式/1引导/首页" },
+    logoLink: { link: "/docs/专业模式/1引导/首页" },
 
     nav: nav(),
 
