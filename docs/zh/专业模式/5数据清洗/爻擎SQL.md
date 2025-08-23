@@ -1,11 +1,7 @@
 # 爻擎SQL
-爻擎大数据平台，支持所有Flink SQL 函数，另外可以根据用户需求快速进行新函数定义。
+爻擎大数据平台，可以根据用户需求快速进行新函数定义。
  
  
-## Flink SQL函数
- > 参考：
- > - [Flink 函数](https://nightlies.apache.org/flink/flink-docs-release-1.20/zh/docs/dev/table/functions/systemfunctions/)
-
 ## 爻擎SQL函数
 
 |函数			|说明				|样例语法				|样例结果			|
