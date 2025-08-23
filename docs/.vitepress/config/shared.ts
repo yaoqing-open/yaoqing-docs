@@ -58,6 +58,7 @@ export const shared = defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/docs/yaoqing-logo-mini.svg' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/docs/yaoqing-logo-mini.png' }],
+    ['meta', { name: 'algolia-site-verification', content: '4D087D24AA6EF828' }],
     // ['meta', { name: 'theme-color', content: '#5f67ee' }],
     // ['meta', { property: 'og:type', content: 'website' }],
     // ['meta', { property: 'og:locale', content: 'zh' }],
