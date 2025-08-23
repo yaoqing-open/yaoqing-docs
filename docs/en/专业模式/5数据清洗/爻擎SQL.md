@@ -1,9 +1,5 @@
 # Yaoqing SQL
-The Yaoqing Big Data Platform supports all standard Flink SQL functions and allows for the rapid definition of new functions based on user requirements.
-
-## Flink SQL Functions
- > Reference:
- > - [Flink Functions](https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/dev/table/functions/systemfunctions/)
+The Yaoqing Big Data Platform allows for the rapid definition of new functions based on user requirements.
 
 ## Yaoqing SQL Functions
 
