@@ -85,8 +85,8 @@ export const shared = defineConfig({
       provider: 'algolia',
       options: {
         appId: 'G9QCU5H8Q2',
-        apiKey: '04a3000659a2dc09b956ecc943a38a2d',
-        indexName: 'yaoqing',
+        apiKey: '428aeaceb09352646390506da21e4f89',
+        indexName: '爻擎 AI 大数据',
         locales: {
           ...zhSearch,
         }
