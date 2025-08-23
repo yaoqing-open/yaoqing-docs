@@ -10,7 +10,7 @@ export const en = defineConfig({
   description: 'Yaoqing User Manual - English Version',
 
   themeConfig: {
-    logoLink: { link: "/en/专业模式/1引导/首页" },
+    logoLink: { link: "/docs/en/专业模式/1引导/快速开始" },
 
     nav: nav(),
 
@@ -40,7 +40,7 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: 'Guide',
-      link: '/en/专业模式/1引导/首页',
+      link: '/en/专业模式/1引导/快速开始',
       activeMatch: '/en/专业模式/'
     },
     {
@@ -57,7 +57,6 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       text: 'Guide',
       collapsed: false,
       items: [
-        { text: 'Home', link: '1引导/首页' },
         { text: 'Quick Start', link: '1引导/快速开始' }
       ]
     },
