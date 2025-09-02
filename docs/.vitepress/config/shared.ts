@@ -56,9 +56,9 @@ export const shared = defineConfig({
 
   /* prettier-ignore */
   head: [
-    // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vitepress-logo-mini.svg' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/yaoqing-logo-mini.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/yaoqing-logo-mini.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/docs/yaoqing-logo-mini.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/docs/yaoqing-logo-mini.png' }],
+    ['meta', { name: 'algolia-site-verification', content: '4D087D24AA6EF828' }],
     // ['meta', { name: 'theme-color', content: '#5f67ee' }],
     // ['meta', { property: 'og:type', content: 'website' }],
     // ['meta', { property: 'og:locale', content: 'zh' }],
@@ -66,7 +66,7 @@ export const shared = defineConfig({
     // ['meta', { property: 'og:site_name', content: 'VitePress' }],
     // ['meta', { property: 'og:image', content: 'https://vitepress.dev/vitepress-og.jpg' }],
     // ['meta', { property: 'og:url', content: 'https://vitepress.dev/' }],
-    ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }]
+    // ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }]
   ],
 
   themeConfig: {
@@ -85,8 +85,8 @@ export const shared = defineConfig({
       provider: 'algolia',
       options: {
         appId: 'G9QCU5H8Q2',
-        apiKey: '04a3000659a2dc09b956ecc943a38a2d',
-        indexName: 'yaoqing',
+        apiKey: '428aeaceb09352646390506da21e4f89',
+        indexName: '爻擎 AI 大数据',
         locales: {
           ...zhSearch,
         }

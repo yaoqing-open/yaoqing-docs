@@ -10,7 +10,7 @@ export const zh = defineConfig({
   description: '爻擎使用文档-中文文档',
 
   themeConfig: {
-    logoLink: { link: "/docs/专业模式/1引导/首页" },
+    logoLink: { link: "/docs/专业模式/1引导/快速开始" },
 
     nav: nav(),
 
@@ -65,8 +65,7 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: '专业模式',
-      link: '专业模式/1引导/首页',
-      // link: '首页',
+      link: '专业模式/1引导/快速开始',
       activeMatch: '/专业模式/'
     },
     {
@@ -96,8 +95,6 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       text: '引导',
       collapsed: false,
       items: [
-        // { text: '首页', link: '../../首页' },
-        { text: '首页', link: '1引导/首页' },
         { text: '快速开始', link: '1引导/快速开始' }
       ]
     },
