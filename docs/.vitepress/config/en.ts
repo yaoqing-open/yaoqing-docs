@@ -39,6 +39,10 @@ function nav(): DefaultTheme.NavItem[] {
       link: 'https://yaoqing.ai',
     },
     {
+      text: 'demo',
+      link: 'https://demo.yaoqing.ai',
+    },
+    {
       text: 'Guide',
       link: '/en/专业模式/1引导/快速开始',
       activeMatch: '/en/专业模式/'
