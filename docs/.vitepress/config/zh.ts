@@ -132,9 +132,9 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '数据清洗', link: '5数据清洗/数据清洗' },
-        { text: '快捷键', link: '5数据清洗/快捷键' },
         { text: '清洗规范', link: '5数据清洗/清洗规范' },
         { text: '爻擎 SQL', link: '5数据清洗/爻擎SQL' },
+        { text: '快捷键', link: '5数据清洗/快捷键' },
       ]
     },
     {
