@@ -1,7 +1,6 @@
 # 爻擎SQL
 爻擎大数据平台，可以根据用户需求快速进行新函数定义。
- 
- 
+
 ## 爻擎SQL函数
 ### 时间函数
 |函数									|说明																								|样例语法																		|样例结果					|
@@ -35,7 +34,6 @@
 | `MINUTE(timestamp)`					| 提取时间戳的分钟																					| `SELECT MINUTE(NOW())`											| `30`						|
 | `SECOND(timestamp)`					| 提取时间戳的秒数																					| `SELECT SECOND(NOW())`											| `0`						|
 
- 
 ### 字符串函数
 |函数										|说明											|样例语法																|样例结果							|
 |--											|--												|--																		|--									|
@@ -60,7 +58,6 @@
 | `REGEXP_REPLACE(str, pattern, replacement)` | 正则表达式替换                           | `SELECT REGEXP_REPLACE('abc123def', '[0-9]+', '*')` | `abc*def`            |
 | `REGEXP_EXTRACT(str, pattern[, index])`   | 正则表达式提取指定组（index 从 1 开始）                     | `SELECT REGEXP_EXTRACT('abc123def', '([a-z]+)([0-9]+)', 1)` | `abc`                |
 | `COALESCE(value1, value2, ...)`			| 返回第一个非 NULL 的表达式						| `SELECT COALESCE(NULL, 'A', 'B')`										| `A`								|
-
 
 ### 算术函数
 |函数								|说明							|样例语法					|样例结果		|
