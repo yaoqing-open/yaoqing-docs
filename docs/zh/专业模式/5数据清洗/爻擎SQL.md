@@ -1,7 +1,6 @@
 # 爻擎SQL
 爻擎大数据平台，可以根据用户需求快速进行新函数定义。
- 
- 
+
 ## 爻擎SQL函数
 ### 时间函数
 |函数									|说明																								|样例语法																		|样例结果					|
@@ -35,7 +34,6 @@
 | `MINUTE(timestamp)`					| 提取时间戳的分钟																					| `SELECT MINUTE(NOW())`											| `30`						|
 | `SECOND(timestamp)`					| 提取时间戳的秒数																					| `SELECT SECOND(NOW())`											| `0`						|
 
- 
 ### 字符串函数
 |函数										|说明											|样例语法																|样例结果							|
 |--											|--												|--																		|--									|
@@ -60,7 +58,6 @@
 | `REGEXP_REPLACE(str, pattern, replacement)` | 正则表达式替换                           | `SELECT REGEXP_REPLACE('abc123def', '[0-9]+', '*')` | `abc*def`            |
 | `REGEXP_EXTRACT(str, pattern[, index])`   | 正则表达式提取指定组（index 从 1 开始）                     | `SELECT REGEXP_EXTRACT('abc123def', '([a-z]+)([0-9]+)', 1)` | `abc`                |
 | `COALESCE(value1, value2, ...)`			| 返回第一个非 NULL 的表达式						| `SELECT COALESCE(NULL, 'A', 'B')`										| `A`								|
-
 
 ### 算术函数
 |函数								|说明							|样例语法					|样例结果		|
@@ -95,7 +92,7 @@
 | `AVG(numeric_expr)`           | 返回数值表达式的平均值                   | `SELECT AVG(score)`  | `85.5`        |
 | `MIN(expression)`             | 返回表达式的最小值                       | `SELECT MIN(value)`  | `10`          |
 | `MAX(expression)`             | 返回表达式的最大值                       | `SELECT MAX(value)`  | `100`         |
-| `LISTAGG(expression [, separator])` | 将所有值连接成一个字符串 (类似 GROUP_CONCAT) | `SELECT LISTAGG(city, ',')` | `Beijing,Shanghai` |
+| `LISTAGG(expression [xxx, separator])` | 将所有值连接成一个字符串 (类似 GROUP_CONCAT) | `SELECT LISTAGG(city, ',')` | `Beijing,Shanghai` |
 | `ROW_NUMBER()` | 为每行分配唯一的连续序号（从1开始）| `SELECT LISTAGG(city, ',')` | `1, 2, 3, ...` |
 | `RANK()` | 排名，相同值会有相同排名，后续排名会跳过 | `SELECT LISTAGG(city, ',')` | `1, 1, 3, 4, ...` |
 | `DENSE_RANK)` | 密集排名，相同值相同排名，但后续排名不跳过 | `SELECT LISTAGG(city, ',')` | `1, 1, 2, 3, ...` |
@@ -103,4 +100,29 @@
 | `LAST_VALUE()` | 获取窗口内最后一个值 | `SELECT LAST_VALUE(price) OVER (PARTITION BY product ORDER BY event_time)` |  |
 
 
-
+<div style="overflow-x: auto; max-width: 100%;">
+  <table>
+    <thead>
+      <tr>
+        <th>函数</th>
+        <th>说明</th>
+        <th>样例语法</th>
+        <th>样例结果</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>COUNT(expression)</td>
+          <td>返回非 NULL 值的数量</td>
+          <td>SELECT COUNT(col)</td>
+          <td>`10` (行数)</td>
+        </tr>
+        <tr>
+          <td>`LISTAGG(expression [, separator])`</td>
+          <td>将所有值连接成一个字符串 (类似 GROUP_CONCAT)</td>
+          <td>`SELECT LISTAGG(city, ',')`</td>
+          <td>`Beijing,Shanghai`</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

@@ -64,6 +64,10 @@ function nav(): DefaultTheme.NavItem[] {
       link: 'https://yaoqing.ai',
     },
     {
+      text: '演示站',
+      link: 'https://demo.yaoqing.ai',
+    },
+    {
       text: '专业模式',
       link: '专业模式/1引导/快速开始',
       activeMatch: '/专业模式/'
@@ -120,7 +124,6 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
 		{ text: '数据类型映射', link: '4数据接入/数据类型映射' },
 		{ text: 'MYSQL接入说明', link: '4数据接入/MYSQL接入说明' },
 		{ text: 'TiDBCloud接入说明', link: '4数据接入/TiDBCloud接入说明' },
-        { text: '数据类型映射', link: '4数据接入/数据类型映射' },
 		{ text: '常见问题', link: '4数据接入/常见问题' },
       ]
     },
@@ -129,9 +132,9 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '数据清洗', link: '5数据清洗/数据清洗' },
-        { text: '快捷键', link: '5数据清洗/快捷键' },
         { text: '清洗规范', link: '5数据清洗/清洗规范' },
         { text: '爻擎 SQL', link: '5数据清洗/爻擎SQL' },
+        { text: '快捷键', link: '5数据清洗/快捷键' },
       ]
     },
     {
@@ -146,6 +149,11 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '数仓 API', link: '7数仓 API/数仓 API' },
+        { text: '参数校验', link: '7数仓 API/参数校验' },
+        { text: 'SQL 查询', link: '7数仓 API/SQL 查询' },
+        { text: 'Lambda 查询', link: '7数仓 API/Lambda 查询' },
+        { text: '分页', link: '7数仓 API/分页' },
+        { text: '语法', link: '7数仓 API/语法' },
       ]
     },
     {
