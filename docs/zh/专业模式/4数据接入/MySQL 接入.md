@@ -1,22 +1,21 @@
-## MYSQL接入说明
+# MySQL 接入
 
-### 准备工作
+## 接入准备
+- 版本：5.7.x、8.x
+- 只支持主键表
+- 数据源账号需要具备最小权限
+  - `GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO '用户名'@'%';`
 
-| 分类	| 说明																																																		|
-| :---	| :---																																																		|
-| 版本	| 5.6、5.7、8.x版本。																																															|
-| 设置	| - 源库需开启ROW模式的Binlog日志<br>- 建议Binlog保留3天以上																																					|
-| 权限	| 数据源账号需要具备如下最小权限：<br>SELECT、SHOW DATABASES、REPLICATION SLAVE、REPLICATION CLIENT。<br>参考命令```GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO '用户名'@'%';```	|
-| 表	| - 表需要有主键<br>- 分片表主键需一致																																											|
-
-参数配置：
+binlog 参数配置：
 ```ini
 binlog_format = ROW
 binlog_row_image = FULL
 ```
 
-AWS RDS MySQL8.x binlog 保留时长配置
-```sql
+binlog 保留时长配置
+
+::: code-group
+```sql [AWS RDS MySQL8.x]
 -- 设置保留 3 天
 CALL mysql.rds_set_configuration('binlog retention hours', 72);
 
@@ -27,6 +26,12 @@ SHOW VARIABLES LIKE 'binlog_row_image';
 -- 查看保留配置
 CALL mysql.rds_show_configuration();
 ```
+
+```sql [MySQL8.x]
+-- aaa
+-- bbb
+```
+:::
 
 binlog 占用数据磁盘空间大小
 

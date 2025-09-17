@@ -122,8 +122,8 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       items: [
         { text: '数据接入', link: '4数据接入/数据接入' },
 		{ text: '数据类型映射', link: '4数据接入/数据类型映射' },
-		{ text: 'MYSQL接入说明', link: '4数据接入/MYSQL接入说明' },
-		{ text: 'TiDBCloud接入说明', link: '4数据接入/TiDBCloud接入说明' },
+		{ text: 'MySQL 接入', link: '4数据接入/MySQL 接入' },
+		{ text: 'TiDBCloud 接入', link: '4数据接入/TiDBCloud 接入' },
 		{ text: '常见问题', link: '4数据接入/常见问题' },
       ]
     },

@@ -1,8 +1,7 @@
-# 爻擎SQL
-爻擎大数据平台，可以根据用户需求快速进行新函数定义。
+# 爻擎 SQL 函数
+---
 
-## 爻擎SQL函数
-### 时间函数
+## 时间函数
 |函数									|说明																								|样例语法																		|样例结果					|
 |--										|--																									|--																				|--							|
 | `LAST_2_MINUTE()`						| 动态值，前1分钟0秒的13位毫秒时间戳																| `select LAST_2_MINUTE()`														| `2025-06-06 14:35:00`		|
@@ -34,7 +33,7 @@
 | `MINUTE(timestamp)`					| 提取时间戳的分钟																					| `SELECT MINUTE(NOW())`											| `30`						|
 | `SECOND(timestamp)`					| 提取时间戳的秒数																					| `SELECT SECOND(NOW())`											| `0`						|
 
-### 字符串函数
+## 字符串函数
 |函数										|说明											|样例语法																|样例结果							|
 |--											|--												|--																		|--									|
 | `SUBSTRING(string, pos, len)`           | 提取字符串子串 (pos 从 1 开始)           | `SELECT SUBSTRING('Hello Yaoqing', 1, 5)`            | `Hello`              |
@@ -59,7 +58,7 @@
 | `REGEXP_EXTRACT(str, pattern[, index])`   | 正则表达式提取指定组（index 从 1 开始）                     | `SELECT REGEXP_EXTRACT('abc123def', '([a-z]+)([0-9]+)', 1)` | `abc`                |
 | `COALESCE(value1, value2, ...)`			| 返回第一个非 NULL 的表达式						| `SELECT COALESCE(NULL, 'A', 'B')`										| `A`								|
 
-### 算术函数
+## 算术函数
 |函数								|说明							|样例语法					|样例结果		|
 |--									|--								|--							|--				|
 | `ABS(number)`						| 返回数字的绝对值				| `SELECT ABS(-10)`			| `10`			|
@@ -74,7 +73,7 @@
 | `LN(number)`						| 返回自然对数 (以 `e` 为底)		| `SELECT LN(2.718)`		| `0.999...`	|
 | `SQRT(number)`					| 返回数字的平方根				| `SELECT SQRT(9)`			| `3.0`			|
 
-### JSON函数
+## JSON函数
 |函数								|说明							|样例语法					|样例结果		|
 |--									|--								|--							|--				|
 | `JSON_VALUE(json_str, path)`      | 提取 JSON 字符串中指定路径的值           | `SELECT JSON_VALUE('{"a": 1, "b": "str"}', '$.b')`| `str`                        |
@@ -83,7 +82,7 @@
 | `JSON_QUERY(json_str, path)`      | 提取 JSON 字符串中指定路径的 JSON 片段   | `SELECT JSON_QUERY('{"a": 1, "b": {"c": 2}}', '$.b')` | `{"c":2}`                    |
 | `IS JSON`               | 判断字符串是否是有效的 JSON              | `SELECT '{"a":1}' IS JSON`                        | `TRUE`                       |
 
-### 聚合函数
+## 聚合函数
 |函数								|说明							|样例语法					|样例结果		|
 |--									|--								|--							|--				|
 | `COUNT(expression)`           | 返回非 NULL 值的数量                     | `SELECT COUNT(col)`  | `10` (行数)   |
