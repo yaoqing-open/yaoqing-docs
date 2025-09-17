@@ -4,12 +4,12 @@
 ## 时间函数
 |函数									|说明																								|样例语法																		|样例结果					|
 |--										|--																									|--																				|--							|
-| `LAST_2_MINUTE()`						| 动态值，前1分钟0秒的13位毫秒时间戳																| `select LAST_2_MINUTE()`														| `2025-06-06 14:35:00`		|
-| `LAST_3_HOUR()`						| 动态值，前2小时0分0秒的13位毫秒时间戳																	| `select LAST_3_HOUR()`														| `2025-06-06 12:00:00`		|
-| `LAST_2_DAY()`						| 动态值，前1天的0时0分0秒的13位毫秒时间戳																			| `select LAST_2_DAY()`															| `2025-06-05 00:00:00`		|
-| `LAST_2_MINUTE_STRING()`						| 动态值，前1分钟0秒的`yyyy-MM-dd HH:mm`的字符串																| `select LAST_2_MINUTE()`														| `2025-06-06 14:35`		|
-| `LAST_3_HOUR_STRING()`						| 动态值，前2小时0分0秒的`yyyy-MM-dd HH`的字符串																		| `select LAST_3_HOUR()`														| `2025-06-06 12`		|
-| `LAST_2_DAY_STRING()`						| 动态值，前1天的0时0分0秒的`yyyy-MM-dd`的字符串																			| `select LAST_2_DAY()`															| `2025-06-05`		|
+| `LAST_2_MINUTE()`						| 动态值，前1分钟0秒的13位毫秒时间戳																| `select LAST_2_MINUTE()`														| `1749191700000` (代表 `2025-06-06 14:35:00`)	|
+| `LAST_3_HOUR()`						| 动态值，前2小时0分0秒的13位毫秒时间戳																	| `select LAST_3_HOUR()`														| `1749182400000` (代表 `2025-06-06 12:00:00`)		|
+| `LAST_2_DAY()`						| 动态值，前1天的0时0分0秒的13位毫秒时间戳																			| `select LAST_2_DAY()`															| `1749052800000` (代表 `2025-06-05 00:00:00`)		|
+| `LAST_2_MINUTE_STRING()`						| 动态值，前1分钟0秒的`yyyy-MM-dd HH:mm`的字符串																| `select LAST_2_MINUTE_STRING()`														| `2025-06-06 14:35`		|
+| `LAST_3_HOUR_STRING()`						| 动态值，前2小时0分0秒的`yyyy-MM-dd HH`的字符串																		| `select LAST_3_HOUR_STRING()`														| `2025-06-06 12`		|
+| `LAST_2_DAY_STRING()`						| 动态值，前1天的0时0分0秒的`yyyy-MM-dd`的字符串																			| `select LAST_2_DAY_STRING()`															| `2025-06-05`		|
 | `DATE_TIME_TO_DATE_DAY(timestamp)`			| 将时间timestamp转为`yyyy-MM-dd`的字符串																						| `select DATE_TIME_TO_DATE_DAY(data_time)`										| `2025-06-06`				|
 | `DATE_TIME_TO_DATE_DAY(timestamp,tz)`		| 将时间timestamp转为tz时区的`yyyy-MM-dd`的字符串																						| `select DATE_TIME_TO_DATE_DAY(data_time,'+0800')`								| `2025-06-06`				|
 | `DATE_TIME_TO_DATE_HOUR(timestamp)`			| 将时间timestamp转为`yyyy-MM-dd HH`的字符串																								| `select DATE_TIME_TO_DATE_HOUR(data_time)`									| `2025-06-06 14`			|

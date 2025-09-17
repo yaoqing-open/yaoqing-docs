@@ -5,9 +5,9 @@ The Yaoqing Big Data Platform allows for the rapid definition of new functions b
 ### Time function
 |Function |Description |Example Syntax |Example Result |
 |---|---|---|---|
-| `LAST_2_MINUTE()` |Dynamic value. Returns the 13-digit millisecond timestamp of 1 minute ago, truncated to the minute (seconds set to 00). |`select LAST_2_MINUTE()` |`1749136500000` (Represents `2025-06-06 14:35:00`) |
-| `LAST_3_HOUR()` |Dynamic value. Returns the 13-digit millisecond timestamp of 2 hours ago, truncated to the hour (minutes and seconds set to 00). |`select LAST_3_HOUR()` |`1749129600000` (Represents `2025-06-06 12:00:00`) |
-| `LAST_2_DAY()` |Dynamic value. Returns the 13-digit millisecond timestamp of the previous day, truncated to the day (time set to 00:00:00). |`select LAST_2_DAY()` |`1749043200000` (Represents `2025-06-05 00:00:00`) |
+| `LAST_2_MINUTE()` |Dynamic value. Returns the 13-digit millisecond timestamp of 1 minute ago, truncated to the minute (seconds set to 00). |`select LAST_2_MINUTE()` |`1749191700000` (Represents `2025-06-06 14:35:00`) |
+| `LAST_3_HOUR()` |Dynamic value. Returns the 13-digit millisecond timestamp of 2 hours ago, truncated to the hour (minutes and seconds set to 00). |`select LAST_3_HOUR()` |`1749182400000` (Represents `2025-06-06 12:00:00`) |
+| `LAST_2_DAY()` |Dynamic value. Returns the 13-digit millisecond timestamp of the previous day, truncated to the day (time set to 00:00:00). |`select LAST_2_DAY()` |`1749052800000` (Represents `2025-06-05 00:00:00`) |
 | `LAST_2_MINUTE_STRING()` |Dynamic value. Returns a string for 1 minute ago, formatted as `yyyy-MM-dd HH:mm`. |`select LAST_2_MINUTE_STRING()` |`2025-06-06 14:35` |
 | `LAST_3_HOUR_STRING()` |Dynamic value. Returns a string for 2 hours ago, formatted as `yyyy-MM-dd HH`. |`select LAST_3_HOUR_STRING()` |`2025-06-06 12` |
 | `LAST_2_DAY_STRING()` |Dynamic value. Returns a string for the previous day, formatted as `yyyy-MM-dd`. |`select LAST_2_DAY_STRING()` |`2025-06-05` |
