@@ -3,36 +3,47 @@
 
 ## 爻擎SQL函数
 ### 时间函数
-|函数									|说明																								|样例语法																		|样例结果					|
-|--										|--																									|--																				|--							|
-| `LAST_2_MINUTE()`						| 动态值，前1分钟0秒的13位毫秒时间戳																| `select LAST_2_MINUTE()`														| `1749191700000` (代表 `2025-06-06 14:35:00`)	|
-| `LAST_3_HOUR()`						| 动态值，前2小时0分0秒的13位毫秒时间戳																	| `select LAST_3_HOUR()`														| `1749182400000` (代表 `2025-06-06 12:00:00`)		|
-| `LAST_2_DAY()`						| 动态值，前1天的0时0分0秒的13位毫秒时间戳																			| `select LAST_2_DAY()`															| `1749052800000` (代表 `2025-06-05 00:00:00`)		|
-| `LAST_2_MINUTE_STRING()`						| 动态值，前1分钟0秒的`yyyy-MM-dd HH:mm`的字符串																| `select LAST_2_MINUTE_STRING()`														| `2025-06-06 14:35`		|
-| `LAST_3_HOUR_STRING()`						| 动态值，前2小时0分0秒的`yyyy-MM-dd HH`的字符串																		| `select LAST_3_HOUR_STRING()`														| `2025-06-06 12`		|
-| `LAST_2_DAY_STRING()`						| 动态值，前1天的0时0分0秒的`yyyy-MM-dd`的字符串																			| `select LAST_2_DAY_STRING()`															| `2025-06-05`		|
-| `DATE_TIME_TO_DATE_DAY(timestamp)`			| 将时间timestamp转为`yyyy-MM-dd`的字符串																						| `select DATE_TIME_TO_DATE_DAY(data_time)`										| `2025-06-06`				|
-| `DATE_TIME_TO_DATE_DAY(timestamp,tz)`		| 将时间timestamp转为tz时区的`yyyy-MM-dd`的字符串																						| `select DATE_TIME_TO_DATE_DAY(data_time,'+0800')`								| `2025-06-06`				|
-| `DATE_TIME_TO_DATE_HOUR(timestamp)`			| 将时间timestamp转为`yyyy-MM-dd HH`的字符串																								| `select DATE_TIME_TO_DATE_HOUR(data_time)`									| `2025-06-06 14`			|
-| `DATE_TIME_TO_DATE_HOUR(timestamp,tz)`		| 将时间timestamp转为tz时区的`yyyy-MM-dd HH`的字符串																						| `select DATE_TIME_TO_DATE_HOUR(data_time,'+0800')`							| `2025-06-06 14`			|
-| `DATE_TIME_TO_DATE_MINUTE(timestamp)`		| 将时间timestamp转为`yyyy-MM-dd HH:mm`的字符串																								| `select DATE_TIME_TO_DATE_MINUTE(data_time)`									| `2025-06-06 14:35`		|
-| `DATE_TIME_TO_DATE_MINUTE(timestamp,tz)`		| 将时间timestamp转为tz时区的`yyyy-MM-dd HH:mm`的字符串																						| `select DATE_TIME_TO_DATE_MINUTE(data_time,'+0800')`							| `2025-06-06 14:35`		|
-| `CURRENT_TIMESTAMP()`					| 返回当前时间戳																					| `SELECT CURRENT_TIMESTAMP`													| `2023-10-27 10:30:00`	|
-| `LOCALTIMESTAMP()`					| 返回当前本地时间戳																					| `SELECT LOCALTIMESTAMP`														| `2023-10-27 18:30:00`	|
-| `NOW()`								| 返回当前时间戳 (等同于 `CURRENT_TIMESTAMP()`)														| `SELECT NOW()`																| `2023-10-27 10:30:00`	|
-| `UNIX_TIMESTAMP()`					| 返回当前时间戳的秒数																			| `SELECT UNIX_TIMESTAMP()`														| `1678886400`				|
-| `UNIX_TIMESTAMP(string1[, string2])`	| 将格式为 string2（默认yyyy-MM-dd HH:mm:ss）的日期时间字符串 string1 转换为 Unix 时间戳（以秒为单位）	| `SELECT UNIX_TIMESTAMP('1970-01-01 08:00:11 +0800', 'yyyy-MM-dd HH:mm:ss X')`	| `11`						|
-| `DATE_FORMAT(timestamp, format)`		| 将时间戳格式化为指定字符串																			| `SELECT DATE_FORMAT(NOW(), 'yyyy-MM-dd HH:mm:ss')`							| `2023-10-27 10:30:00`		|
-| `DATE_FORMAT(string, format)`			| 将时间字符串格式化为另一个时间格式字符串																| `SELECT DATE_FORMAT('2025-08-27 11:22:33', 'yyyy-MM-dd HH:mm')`				| `2025-08-27 11:22`		|
-| `TO_TIMESTAMP(string, format)`			| 将字符串转换为时间戳																				| `SELECT TO_TIMESTAMP('2023-10-27 10:30:00', 'yyyy-MM-dd HH:mm:ss')`			| `2023-10-27 10:30:00`	|
-| `YEAR(timestamp)`						| 提取时间戳的年份																					| `SELECT YEAR(NOW())`											| `2023`					|
-| `MONTH(timestamp)`					| 提取时间戳的月份																					| `SELECT MONTH(NOW())`											| `10`						|
-| `DAYOFYEAR(timestamp)`				| 提取时间戳一年中的第几天																		| `SELECT DAYOFYEAR(NOW())`												| `239`						|
-| `DAYOFMONTH(timestamp)`				| 提取时间戳一个月中的第几天																				| `SELECT DAYOFMONTH(NOW())`												| `27`						|
-| `DAYOFWEEK(timestamp)`				| 提取时间戳一个星期中的第几天	(周日算第一天，周六算第七天)																			| `SELECT DAYOFWEEK(NOW())`												| `3`						|
-| `HOUR(timestamp)`						| 提取时间戳的小时																					| `SELECT HOUR(NOW())`											| `10`						|
-| `MINUTE(timestamp)`					| 提取时间戳的分钟																					| `SELECT MINUTE(NOW())`											| `30`						|
-| `SECOND(timestamp)`					| 提取时间戳的秒数																					| `SELECT SECOND(NOW())`											| `0`						|
+|函数																	|说明																										|样例语法																										|样例结果										|
+|--																		|--																											|--																												|--												|
+| `LAST_2_MINUTE()`														| 动态值，前1分钟0秒的时间戳毫秒数																			| `select LAST_2_MINUTE()`																						| `1749191700000` (代表 `2025-06-06 14:35:00`)	|
+| `LAST_3_HOUR()`														| 动态值，前2小时0分0秒的时间戳毫秒数																			| `select LAST_3_HOUR()`																						| `1749182400000` (代表 `2025-06-06 12:00:00`)	|
+| `LAST_2_DAY()`														| 动态值，前1天的0时0分0秒的时间戳毫秒数																		| `select LAST_2_DAY()`																							| `1749052800000` (代表 `2025-06-05 00:00:00`)	|
+| `LAST_2_MINUTE_STRING()`												| 动态值，前1分钟0秒的`yyyy-MM-dd HH:mm`的字符串																| `select LAST_2_MINUTE_STRING()`																				| `2025-06-06 14:35`							|
+| `LAST_3_HOUR_STRING()`												| 动态值，前2小时0分0秒的`yyyy-MM-dd HH`的字符串																| `select LAST_3_HOUR_STRING()`																					| `2025-06-06 12`								|
+| `LAST_2_DAY_STRING()`													| 动态值，前1天的0时0分0秒的`yyyy-MM-dd`的字符串																| `select LAST_2_DAY_STRING()`																					| `2025-06-05`									|
+| `TIMESTAMP_TO_DATE_TYPE(epochMilliseconds)`							| 	将毫秒数转为DATE类型																						| `select TIMESTAMP_TO_DATE_TYPE(1746759218000)`																| `2023-10-27`									|
+| `TIMESTAMP_TO_TIME_TYPE(epochMilliseconds)`							| 	将毫秒数转为TIME类型																						| `SELECT TIMESTAMP_TO_TIME_TYPE(1758263416000)`																| `14:30:16`									|
+| `TIMESTAMP_TO_STRING_TYPE(epochMilliseconds,timezoneOffset)`			| 	将毫秒转为timezoneOffset时区的字符串																		| `select TIMESTAMP_TO_STRING_TYPE(1746759218000,'+0800')`														| 时区`+0800`的`2025-05-09 10:53:38`							|
+| `TIMESTAMP_TO_STRING_TYPE(epochMilliseconds,timezoneOffset,format)`	| 	将毫秒转为timezoneOffset时区的format时间格式的字符串														| `select TIMESTAMP_TO_STRING_TYPE(1746759218000,'+0800','YYYY-MM-dd HH')`										| 时区`+0800`的`2025-05-09 10:53`							|
+| `TIMESTAMP_TYPE_TO_TIMESTAMP(timestamp)`								| 	将timestamp转为毫秒数																					| `SELECT TIMESTAMP_TYPE_TO_TIMESTAMP(now())`																	| `1758264829000`								|
+| `TIMESTAMP_TYPE_TO_TIMESTAMP(timestamp,timezoneOffset)`				| 	将timestamp按时区timezoneOffset转为毫秒数																	| `SELECT TIMESTAMP_TYPE_TO_TIMESTAMP(now(),'+0800')`															| `1758272130000`								|
+| `TIMESTAMP_TYPE_TO_STRING_TYPE(timestamp,timezoneOffset)`				|	将timestamp按时区timezoneOffset转为字符串																	| `select TIMESTAMP_TYPE_TO_STRING_TYPE(now(),'+0800')`															| `2023-10-27 18:30:00`							|
+| `TIMESTAMP_TYPE_TO_STRING_TYPE(timestamp,timezoneOffset,format)`		|	将timestamp按时区timezoneOffset转为format时间格式的字符串													| `select TIMESTAMP_TYPE_TO_STRING_TYPE(now(),'+0800','YYYY-MM-dd HH')`											| `2023-10-27 18`								|
+| `TIMESTAMP_TO_DATE_START(epochMilliseconds,timezoneOffset)`			| 将时间戳毫秒值epochMilliseconds转化成对应时区的日期开始时间毫秒值											| `SELECT TIMESTAMP_TO_DATE_START(1758285997000,'+0800')`														| `1758211200000` (对应时区`+0800`的2025-09-19 00:00:00.000)	|
+| `TIMESTAMP_TO_DATE_END(epochMilliseconds,timezoneOffset)`				| 将时间戳毫秒值epochMilliseconds转化成对应时区的日期结束时间毫秒值											| `SELECT TIMESTAMP_TO_DATE_END(1758285997000,'+0800')`															| `1758297599999` (对应时区`+0800`的2025-09-19 23:59:59.999)	|
+| `TIMESTAMP_TO_HOUR_START(epochMilliseconds,timezoneOffset)`			| 将时间戳毫秒值epochMilliseconds转化成对应时区的小时开始时间毫秒值											| `SELECT TIMESTAMP_TO_HOUR_START(1758285997000,'+0800')`														| `1758283200000` (对应时区`+0800`的2025-09-19 20:00:00.000)	|
+| `TIMESTAMP_TO_HOUR_END(epochMilliseconds,timezoneOffset)`				| 将时间戳毫秒值epochMilliseconds转化成对应时区的小时结束时间毫秒值											| `SELECT TIMESTAMP_TO_HOUR_END(1758285997000,'+0800')`															| `1758286799999` (对应时区`+0800`的2025-09-19 20:59:59.999)	|
+| `DATE_STRING_TO_TIMESTAMP_START(date,timezoneOffset)`					| 将yyyy-MM-dd格式的小时字符串，以时区偏移timezoneOffset(如+0800)，解析为该天的0时0分0秒时间戳毫秒,				| `SELECT DATE_STRING_TO_TIMESTAMP_START('2025-05-19','+0800')`													| `1758211200000` (对应时区`+0800`的2025-09-19 00:00:00.000)	|
+| `DATE_STRING_TO_TIMESTAMP_END(date,timezoneOffset)`					| 将yyyy-MM-dd格式的小时字符串，以时区偏移timezoneOffset(如+0800)，解析为该天的23时59分59秒时间戳毫秒,			| `SELECT DATE_STRING_TO_TIMESTAMP_END('2025-05-19','+0800')`													| `1758297599999` (对应时区`+0800`的2025-09-19 23:59:59.999)	|
+| `HOUR_STRING_TO_TIMESTAMP_START(hour,timezoneOffset)`					| 将yyyy-MM-dd HH格式的小时字符串，以时区偏移timezoneOffset(如+0800)，解析为该小时的0分0秒时间戳毫秒			| `SELECT HOUR_STRING_TO_TIMESTAMP_START('2025-05-19 20','+0800')`												| `1758283200000` (对应时区`+0800`的2025-09-19 20:00:00.000)	|
+| `HOUR_STRING_TO_TIMESTAMP_END(hour,timezoneOffset)`					| 将yyyy-MM-dd HH格式的小时字符串，以时区偏移timezoneOffset(如+0800)，解析为该小时的59分59秒时间戳毫秒,			| `SELECT HOUR_STRING_TO_TIMESTAMP_END('2025-05-19 20','+0800')`												| `1758286799999` (对应时区`+0800`的2025-09-19 20:59:59.999)	|
+| `STRING_TYPE_TO_TIMESTAMP(string,format,timezoneOffset)`				|				以format格式解析string字符串按时区timezoneOffset	转为	时间戳毫秒数								| `SELECT STRING_TYPE_TO_TIMESTAMP('2025-05-09 12:53:38.123','yyyy-MM-dd HH:mm:ss.SSS','+0800')`				| `1746766418000`								|
+| `FROM_UNIXTIME(epochSeconds[, format])`								| 	将秒数转为format（默认`yyyy-MM-dd HH:mm:ss`）的时间格式的字符串											| `SELECT FROM_UNIXTIME(1746759218000/1000)`  `SELECT FROM_UNIXTIME(1746759218000/1000,'yyyy-MM-dd HH:mm:ss')`	| `2025-05-09 10:53:38`							|
+| `NOW()`																| 返回当前timestamp																							| `SELECT NOW()`																								| `2023-10-27 10:30:00`							|
+| `UNIX_TIMESTAMP()`													| 返回当前时间戳秒数																							| `SELECT UNIX_TIMESTAMP()`																						| `1678886400`									|
+| `UNIX_TIMESTAMP(string[, format])`									| 将格式为 format（默认`yyyy-MM-dd HH:mm:ss`）的日期时间字符串 string 转换为时间戳秒数							| `SELECT UNIX_TIMESTAMP('1970-01-01 08:00:11 +0800', 'yyyy-MM-dd HH:mm:ss X')`									| `11`											|
+| `DATE_FORMAT(timestamp, format)`										| 将timestamp格式化为指定字符串																				| `SELECT DATE_FORMAT(NOW(), 'yyyy-MM-dd HH:mm:ss')`															| `2023-10-27 10:30:00`							|
+| `DATE_FORMAT(string, format)`											| 将时间字符串格式化为另一个时间格式字符串																		| `SELECT DATE_FORMAT('2025-08-27 11:22:33', 'yyyy-MM-dd HH:mm')`												| `2025-08-27 11:22`							|
+| `TO_TIMESTAMP(string, format)`										| 将字符串转换为timestamp																					| `SELECT TO_TIMESTAMP('2023-10-27 10:30:00', 'yyyy-MM-dd HH:mm:ss')`											| `2023-10-27 10:30:00`							|
+| `TO_TIMESTAMP_LTZ(numeric, precision)`								| 将秒数或者毫秒数按集群时区转换为timestamp类型，precision=0 则numeric为秒数， precision=3 则numeric为毫秒数	| `SELECT TO_TIMESTAMP_LTZ(1746759218000, 3)`																	| `2025-09-19 08:52:50`							|
+| `YEAR(timestamp)`														| 提取时间戳的年份																							| `SELECT YEAR(NOW())`																							| `2023`										|
+| `MONTH(timestamp)`													| 提取时间戳的月份																							| `SELECT MONTH(NOW())`																							| `10`											|
+| `DAYOFYEAR(timestamp)`												| 提取时间戳一年中的第几天																					| `SELECT DAYOFYEAR(NOW())`																						| `239`											|
+| `DAYOFMONTH(timestamp)`												| 提取时间戳一个月中的第几天																					| `SELECT DAYOFMONTH(NOW())`																					| `27`											|
+| `DAYOFWEEK(timestamp)`												| 提取时间戳一个星期中的第几天	(周日算第一天，周六算第七天)													| `SELECT DAYOFWEEK(NOW())`																						| `3`											|
+| `HOUR(timestamp)`														| 提取时间戳的小时																							| `SELECT HOUR(NOW())`																							| `10`											|
+| `MINUTE(timestamp)`													| 提取时间戳的分钟																							| `SELECT MINUTE(NOW())`																						| `30`											|
+| `SECOND(timestamp)`													| 提取时间戳的秒数																							| `SELECT SECOND(NOW())`																						| `0`											|
 
 ### 字符串函数
 |函数										|说明											|样例语法																|样例结果							|
