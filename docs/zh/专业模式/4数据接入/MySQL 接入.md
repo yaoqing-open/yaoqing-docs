@@ -28,8 +28,16 @@ CALL mysql.rds_show_configuration();
 ```
 
 ```sql [MySQL8.x]
--- aaa
--- bbb
+-- 在 my.cnf 或 my.ini 中添加：
+[mysqld]
+# 启用 binlog
+log_bin = /var/lib/mysql/mysql-bin
+# 设置 binlog 保留 3 天
+binlog_expire_logs_seconds = 259200
+# 设置每个 binlog 文件大小（可选）
+max_binlog_size = 100M
+# 设置 binlog 格式
+binlog_format = ROW
 ```
 :::
 
