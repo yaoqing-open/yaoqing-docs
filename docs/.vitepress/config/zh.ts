@@ -122,8 +122,8 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       items: [
         { text: '数据接入', link: '4数据接入/数据接入' },
 		{ text: '数据类型映射', link: '4数据接入/数据类型映射' },
-		{ text: 'MySQL 接入', link: '4数据接入/MySQL接入' },
-		{ text: 'TiDBCloud 接入', link: '4数据接入/TiDBCloud接入' },
+		{ text: 'MySQL 接入', link: '4数据接入/MySQL 接入' },
+		{ text: 'TiDB Cloud 接入', link: '4数据接入/TiDB Cloud 接入' },
 		{ text: '常见问题', link: '4数据接入/常见问题' },
       ]
     },
@@ -133,7 +133,7 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       items: [
         { text: '数据清洗', link: '5数据清洗/数据清洗' },
         { text: '清洗规范', link: '5数据清洗/清洗规范' },
-        { text: '爻擎 SQL', link: '5数据清洗/爻擎SQL' },
+        { text: '爻擎 SQL', link: '5数据清洗/爻擎 SQL' },
         { text: '快捷键', link: '5数据清洗/快捷键' },
       ]
     },

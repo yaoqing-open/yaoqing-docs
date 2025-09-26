@@ -84,8 +84,8 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Data Input', link: '4数据接入/数据接入' },
         { text: 'Data Type Mapping', link: '4数据接入/数据类型映射' },
-		{ text: 'MySQL Connection Guide', link: '4数据接入/MYSQL接入说明' },
-		{ text: 'TiDB Cloud Connection Guide', link: '4数据接入/TiDBCloud接入说明' },
+		{ text: 'MySQL Connection Guide', link: '4数据接入/MySQL 接入' },
+		{ text: 'TiDB Cloud Connection Guide', link: '4数据接入/TiDB Cloud 接入' },
 		{ text: 'FAQ', link: '4数据接入/常见问题' },
       ]
     },
@@ -96,7 +96,7 @@ function sidebarProfessional(): DefaultTheme.SidebarItem[] {
         { text: 'ETL', link: '5数据清洗/数据清洗' },
         { text: 'Shortcut Key', link: '5数据清洗/快捷键' },
         { text: 'ETL Specification', link: '5数据清洗/清洗规范' },
-        { text: 'Yaoqing SQL', link: '5数据清洗/爻擎SQL' },
+        { text: 'Yaoqing SQL', link: '5数据清洗/爻擎 SQL' },
       ]
     },
     {
