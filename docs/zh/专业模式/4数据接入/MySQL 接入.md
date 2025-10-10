@@ -1,10 +1,13 @@
 # MySQL 接入说明
 
 ## 接入准备
-- 版本：5.7.x、8.x
-- 只支持主键表
-- 数据源账号需要具备最小权限
-  - `GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO '用户名'@'%';`
+
+| 分类	| 说明																								|
+| :---	| :---																								|
+| 版本	| 5.7.x、8.x																			|									|
+| 权限	| 数据源账号需要具备最小权限:<br>库表只读权限、binlog文件读取权限，参考命令<br>```GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO '用户名'@'%';``` 	|
+| 表	| 表必须有主键|
+
 
 binlog 参数配置：
 ```ini
@@ -58,6 +61,6 @@ binlog 占用数据磁盘空间大小
 | `RENAME COLUMN` 重命名字段			| ⚠️ 非直接同步		| 新增一个字段接受后续数据							| <font color=red>**高**</font>		|
 | `MODIFY COLUMN` 扩大字段长度		| ✅ 是				| 字段长度变更									| 低									|
 | `MODIFY COLUMN` 缩小字段长度		| ❌ 否				| 无任何变化										| 低									|
-| `MODIFY COLUMN_TYPE` 修改字段类型	| ⚠️ 非直接同步		| 数据接入任务会报错，平台通过定时同步结构任务处理	| <font color=red>**高**</font>		|
+| `MODIFY COLUMN_TYPE` 修改字段类型	| ⚠️ 非直接同步		| 数据接入任务会报错，平台通过定时同步结构任务处理，但可能出现不兼容错误	| <font color=red>**高**</font>		|
 | `DROP TABLE` 删除表				| ❌ 否				| 无任何变化										| 低									|
 | `TRUNCATE TABLE` 截断表			| ❌ 否				| 无任何变化										| 低									|
