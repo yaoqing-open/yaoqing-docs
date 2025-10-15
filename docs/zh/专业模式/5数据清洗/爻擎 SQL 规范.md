@@ -16,13 +16,23 @@
 
 
 ## 清洗示例
+- 多表join成明细宽表
  ```sql
- -- left_table为主表，right_table 为维表，target_table为结果表
- INSERT INTO target_table
+ -- left_table为主表，right_table 为维表，target_table_detail为结果表
+ INSERT INTO etl.target_table_detail
  SELECT /*+ STATE_TTL('A' = '3d', 'B' = '0s')*/ 
  col1,col2,...... FROM 
- left_table as A LEFT JOIN right_table as B ON ... 
+ input_bus.left_table as A LEFT JOIN input_dim.right_table as B 
+ ON A.x_id=B.id
  WHERE A.time >= LAST_2_DAY_STRING() ....;
+ ```
+- 明细表按维度汇总
+ ```sql
+ INSERT INTO etl.shop_order_daily_count
+ SELECT DATE_FORMAT(A.time,'yyyy-MM-dd') AS day,shop_id,count(1) as cnt FROM 
+ etl.target_table_detail A
+ WHERE A.time >= LAST_2_DAY_STRING() 
+ GROUP BY DATE_FORMAT(A.time,'yyyy-MM-dd'),shop_id
  ```
 
 ## 优化建议
