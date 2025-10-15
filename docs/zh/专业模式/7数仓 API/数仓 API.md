@@ -9,7 +9,7 @@
 
 ## 使用示例
 
-```hsqldb
+```css
 import request;
 import lombok.experimental.var;
 import bd.dw.api.util.DateUtil;
