@@ -38,4 +38,3 @@ return db.table('sys_user')
     .select()
 ```
 
-TODO 将 mybatis-plus 文档内容，美化后搬到这

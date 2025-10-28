@@ -42,44 +42,6 @@ return db.select("SELECT * FROM sys_user ?{id != null && id.length() > 3, WHERE 
 // 当判断为 false 时，生成SQL：SELECT * FROM sys_user
 ```
 
-## SQL缓存
-```java
-// 将查询结果缓存到名为user_cache的缓存中，有效期1小时
-return db.cache("user_cache", 3600 * 1000).select("""
-    select * from sys_user
-""")
-
-// 当执行以下语句时，将清空 user_cache 缓存
-db.cache("user_cache").update(""" ...... """)
-db.cache("user_cache").insert(""" ...... """)
-```
-
-TODO 缓存更新问题
-
-## 使用事务
---
-
-### 自动事务
-```java
-var val = db.transaction(()=>{
-    var v1 = db.update('...');
-    var v2 = db.update('....');
-    return v2;
-});
-return val;
-```
-
-### 手动事务
-```java
-var tx = db.transaction();  //开启事务
-try{
-    var value = db.update('...');
-    tx.commit();    // 提交事务
-    return value;
-}catch(e){
-    tx.rollback();  // 回滚事务
-}
-```
 
 ## MyBatis 语法支持
 参考: https://mybatis.org/mybatis-3/zh/dynamic-sql.html
